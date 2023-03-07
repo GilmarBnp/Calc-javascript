@@ -5,7 +5,10 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
+body {
+    background-color: rgb(83, 123, 197); margin: 0; padding: 0;
+  display: flexbox;
+}
 
 .fundo {
     height: 100%;
