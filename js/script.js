@@ -3,8 +3,6 @@ const currentOperationText = document.querySelector('#current-operation')
 
 const buttons = document.querySelectorAll('button')
 
-
-
 class Calculator {
     constructor(previousOperationText, currentOperationText) {
         this.previousOperationText = previousOperationText;
@@ -69,8 +67,6 @@ class Calculator {
     // Changes values of calculator screen
     updateScreen(operationValue=null, operation = null, current = null, previous = null) {// or this.currentOperationText += this.currentOperationText
         
-        console.log(operationValue, operation, current, previous)
-
         if(operationValue === null) {
             this.currentOperationText.innerText += this.currentOperation   
         }else{
@@ -85,7 +81,6 @@ class Calculator {
         }
     }//currentOperationText é a tela da calculadora e o currentOperation é o digito que vem do addDigit()
   
-
     // Change math operation
     changeOperation(operation) {
         const mathOperations = ["x", "-", "+", "/"];
@@ -134,7 +129,7 @@ buttons.forEach((btn) => {
         }else{ 
             calc.processOperation(value)/* está passando os operadores que vem do forEach((btn) =>) para o método
                                             processOperation, o calc está estanciando um novo obj Calculator
-                                              com o constructor*/ 
+                                            com o constructor*/ 
         }
     })
 })
