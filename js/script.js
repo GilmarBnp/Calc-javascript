@@ -10,6 +10,7 @@ class Calculator {
         this.currentOperation = ""
     }
 
+
     // Add digit to a calculator screen
     addDigit(digit) {    
        this.currentOperation = digit;
@@ -18,8 +19,9 @@ class Calculator {
 
     // Process all calculator operations
     processOperation(operation){
+       
         // Check if current value is empty
-        if(this.currentOperationText.innerText === "" && operation !== "CE") {
+        if(this.currentOperationText.innerText === "" && operation !== "CE" ) {
             // Change operation
             if(this.previousOperationText.innerText != "") {
                 this.changeOperation(operation)
@@ -67,6 +69,10 @@ class Calculator {
     // Changes values of calculator screen
     updateScreen(operationValue=null, operation = null, current = null, previous = null) {// or this.currentOperationText += this.currentOperationText
         
+        if(currentOperationText.innerHTML.length === 14){
+            this.currentOperationText.innerText = this.currentOperationText.innerText.slice(0, -1)
+        }
+       
         if(operationValue === null) {
             this.currentOperationText.innerText += this.currentOperation   
         }else{
